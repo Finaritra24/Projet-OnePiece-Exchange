@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\matiere\\m2\\Dotnet Core\\Projet\\OnePiece\\onepiece\\OnePiece.csproj": {}
+    "E:\\matiere\\m2\\Dotnet Core\\git\\onepiece\\OnePiece.csproj": {}
   },
   "projects": {
-    "E:\\matiere\\m2\\Dotnet Core\\Projet\\OnePiece\\onepiece\\OnePiece.csproj": {
+    "E:\\matiere\\m2\\Dotnet Core\\git\\onepiece\\OnePiece.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\matiere\\m2\\Dotnet Core\\Projet\\OnePiece\\onepiece\\OnePiece.csproj",
+        "projectUniqueName": "E:\\matiere\\m2\\Dotnet Core\\git\\onepiece\\OnePiece.csproj",
         "projectName": "OnePiece",
-        "projectPath": "E:\\matiere\\m2\\Dotnet Core\\Projet\\OnePiece\\onepiece\\OnePiece.csproj",
+        "projectPath": "E:\\matiere\\m2\\Dotnet Core\\git\\onepiece\\OnePiece.csproj",
         "packagesPath": "C:\\Users\\ROG\\.nuget\\packages\\",
-        "outputPath": "E:\\matiere\\m2\\Dotnet Core\\Projet\\OnePiece\\onepiece\\obj\\",
+        "outputPath": "E:\\matiere\\m2\\Dotnet Core\\git\\onepiece\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

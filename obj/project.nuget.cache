@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DFc0fEADSQ8=",
+  "dgSpecHash": "LO5GbJlD8b4=",
   "success": true,
-  "projectFilePath": "E:\\matiere\\m2\\Dotnet Core\\Projet\\OnePiece\\onepiece\\OnePiece.csproj",
+  "projectFilePath": "E:\\matiere\\m2\\Dotnet Core\\git\\onepiece\\OnePiece.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ROG\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\ROG\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
