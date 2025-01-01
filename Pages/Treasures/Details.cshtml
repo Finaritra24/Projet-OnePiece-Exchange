@@ -1,0 +1,43 @@
+@page
+@model OnePiece.Pages_Treasures.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Treasure</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Treasure.Denomination)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Treasure.Denomination)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Treasure.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Treasure.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Treasure.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Treasure.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Treasure.Pirate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Treasure.Pirate.PirateID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Treasure.TreasureID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

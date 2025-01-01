@@ -1,0 +1,45 @@
+@page
+@model OnePiece.Pages_Treasures.CreateModel
+
+        @{
+        ViewData["Title"] = "Create";
+        }
+        
+        <h1>Create</h1>
+        
+    <h4>Treasure</h4>
+    <hr />
+    <div class="row">
+    <div class="col-md-4">
+    <form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Treasure.Denomination" class="control-label"></label>
+                <input asp-for="Treasure.Denomination" class="form-control" />
+                <span asp-validation-for="Treasure.Denomination" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Treasure.Description" class="control-label"></label>
+                <input asp-for="Treasure.Description" class="form-control" />
+                <span asp-validation-for="Treasure.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Treasure.Price" class="control-label"></label>
+                <input asp-for="Treasure.Price" class="form-control" />
+                <span asp-validation-for="Treasure.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Treasure.PirateID" class="control-label"></label>
+                <select asp-for="Treasure.PirateID" class ="form-control" asp-items="ViewBag.PirateID"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+

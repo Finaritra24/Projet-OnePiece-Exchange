@@ -1,0 +1,54 @@
+@page
+@model OnePiece.Pages_Pirates.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pirate[0].Denomination)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pirate[0].Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pirate[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pirate[0].Team)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Pirate) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Denomination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Team.TeamID)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.PirateID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.PirateID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.PirateID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
