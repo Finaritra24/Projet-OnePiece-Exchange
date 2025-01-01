@@ -45,10 +45,6 @@ namespace OnePiece.Pages_Proposals
         // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
 
             _context.Attach(Proposal).State = EntityState.Modified;
 

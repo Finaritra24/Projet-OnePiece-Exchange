@@ -14,6 +14,9 @@ builder.Services.AddSession(options =>
     options.IdleTimeout = TimeSpan.FromMinutes(1000);//Durée de la session
     options.Cookie.HttpOnly = true;  // Sécuriser les cookies
 });
+builder.Services.AddDbContext<AppDbContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+                   .LogTo(Console.WriteLine, LogLevel.Information));
 
 var app = builder.Build();
 

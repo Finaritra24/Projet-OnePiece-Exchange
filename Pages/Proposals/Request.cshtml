@@ -1,0 +1,99 @@
+﻿@page
+@model MyApp.Namespace.RequestModel
+@{
+}
+
+<h1>Historique</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Proposal[0].ProposedOfferAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proposal[0].CounterOfferAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proposal[0].Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proposal[0].State)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proposal[0].DateProposal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proposal[0].DateReplyProposal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proposal[0].ProposedTreasure)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proposal[0].ProposingPirate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proposal[0].RequestingPirate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Proposal)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProposedOfferAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CounterOfferAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.State)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateProposal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateReplyProposal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProposedTreasure.TreasureID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProposingPirate.PirateID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RequestingPirate.PirateID)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.ProposalID">Accept</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ProposalID">Propose</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ProposalID">Refuse</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" asp-page="./Home" asp-route-pageNumber="@(Model.PageNumber - 1)" aria-label="Page précédente">&lt;</a>
+                    </li>
+
+            <!-- Liens pour les numéros de page -->
+            @for (var i = 1; i <= Model.TotalPages; i++)
+            {
+                    <li class="page-item @(i == Model.PageNumber ? "active" : "")">
+                        <a class="page-link" asp-page="./Request" asp-route-pageNumber="@i">@i</a>
+                    </li>
+            }
+                    <li class="page-item">
+                        <a class="page-link" asp-page="./Request" asp-route-pageNumber="@(Model.PageNumber + 1)" aria-label="Page suivante">&gt;</a>
+                    </li>
+        </ul>
+    </nav>
+</div>

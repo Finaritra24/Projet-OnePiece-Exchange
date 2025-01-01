@@ -18,24 +18,35 @@ namespace OnePiece.Pages_Proposals
             _context = context;
         }
 
+        [BindProperty]
         public int TreasureID { get; set; }
+
+        [BindProperty]
         public int PirateID { get; set; }
 
-        
+        [BindProperty]
+        public int RequestingPirateID { get; set; }
+
+
         [BindProperty]
         public Proposal Proposal { get; set; } = default!;
 
-        public IActionResult OnGet()
+        public IActionResult OnGet(int treasureID, int pirateID)
         {
+            TreasureID = treasureID;
+            PirateID = pirateID;
+            RequestingPirateID = HttpContext.Session.GetInt32("PirateID") ?? 0;
+            System.Console.WriteLine("PIRATYY");
+            System.Console.WriteLine(RequestingPirateID+","+TreasureID+","+PirateID);
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
-
-            Proposal.RequestingPirateID = 1;
-            Proposal.ProposingPirateID = 1;
-            Proposal.ProposedTreasureID = 1;
+            RequestingPirateID = HttpContext.Session.GetInt32("PirateID") ?? 0;
+            Proposal.RequestingPirateID = RequestingPirateID;
+            Proposal.ProposingPirateID = PirateID;
+            Proposal.ProposedTreasureID = TreasureID;
             Proposal.DateProposal = DateTime.Now;
             Proposal.DateReplyProposal = DateTime.Now;
             Proposal.State = 0;

@@ -24,8 +24,11 @@ public class HomeModel : PageModel
     public IList<Treasure> Treasure { get; set; } = default!;
     public IList<Treasure> TopRecentTreasures { get; set; } = default!;
 
+    public int PirateID = 0;
+
     public async Task OnGetAsync(int pageNumber = 1, int pageNumberTopRecent = 1)
     {
+        PirateID = HttpContext.Session.GetInt32("PirateID") ?? 0;
         PageSize = 5;
         PageNumber = pageNumber;
         var totalItems = await _context.Treasures.CountAsync();
