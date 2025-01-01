@@ -69,7 +69,7 @@
                     @Html.DisplayFor(modelItem => item.RequestingPirate.PirateID)
                 </td>
                 <td>
-                    <a asp-page="./Edit" asp-route-id="@item.ProposalID">Accept</a> |
+                    <button asp-page="./Edit" asp-route-id="@item.ProposalID">Accept</button> |
                     <a asp-page="./Details" asp-route-id="@item.ProposalID">Propose</a> |
                     <a asp-page="./Delete" asp-route-id="@item.ProposalID">Refuse</a>
                 </td>
