@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using OnePiece.Models;
 
-namespace OnePiece.Pages_Treasures
+namespace OnePiece.Pages_Categories
 {
     public class IndexModel : PageModel
     {
@@ -18,13 +18,11 @@ namespace OnePiece.Pages_Treasures
             _context = context;
         }
 
-        public IList<Treasure> Treasure { get;set; } = default!;
+        public IList<Category> Category { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
-            Treasure = await _context.Treasures
-                .Include(t => t.Category)
-                .Include(t => t.Pirate).ToListAsync();
+            Category = await _context.Category.ToListAsync();
         }
     }
 }

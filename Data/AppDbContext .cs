@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using OnePiece.Models;
 
@@ -53,4 +53,6 @@ public class AppDbContext : DbContext
 
         base.OnModelCreating(modelBuilder);
     }
+
+public DbSet<OnePiece.Models.Category> Category { get; set; } = default!;
 }

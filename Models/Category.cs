@@ -2,11 +2,10 @@
 
 namespace OnePiece.Models
 {
-    [Table("team")]
-    public class Team
+    [Table("category")]
+    public class Category
     {
-        public int TeamID { get; set; }
+        public int CategoryID { get; set; }
         public string Denomination { get; set; }
     }
-
 }

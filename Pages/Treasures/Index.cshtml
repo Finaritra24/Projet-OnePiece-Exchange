@@ -25,6 +25,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Treasure[0].Pirate)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Treasure[0].Category)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -42,6 +45,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Pirate.PirateID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryID)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.TreasureID">Edit</a> |

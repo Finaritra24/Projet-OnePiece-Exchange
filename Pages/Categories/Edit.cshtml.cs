@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using OnePiece.Models;
 
-namespace OnePiece.Pages_Treasures
+namespace OnePiece.Pages_Categories
 {
     public class EditModel : PageModel
     {
@@ -20,7 +20,7 @@ namespace OnePiece.Pages_Treasures
         }
 
         [BindProperty]
-        public Treasure Treasure { get; set; } = default!;
+        public Category Category { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,14 +29,12 @@ namespace OnePiece.Pages_Treasures
                 return NotFound();
             }
 
-            var treasure =  await _context.Treasures.FirstOrDefaultAsync(m => m.TreasureID == id);
-            if (treasure == null)
+            var category =  await _context.Category.FirstOrDefaultAsync(m => m.CategoryID == id);
+            if (category == null)
             {
                 return NotFound();
             }
-            Treasure = treasure;
-           ViewData["CategoryID"] = new SelectList(_context.Category, "CategoryID", "CategoryID");
-           ViewData["PirateID"] = new SelectList(_context.Pirates, "PirateID", "PirateID");
+            Category = category;
             return Page();
         }
 
@@ -49,7 +47,7 @@ namespace OnePiece.Pages_Treasures
                 return Page();
             }
 
-            _context.Attach(Treasure).State = EntityState.Modified;
+            _context.Attach(Category).State = EntityState.Modified;
 
             try
             {
@@ -57,7 +55,7 @@ namespace OnePiece.Pages_Treasures
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!TreasureExists(Treasure.TreasureID))
+                if (!CategoryExists(Category.CategoryID))
                 {
                     return NotFound();
                 }
@@ -70,9 +68,9 @@ namespace OnePiece.Pages_Treasures
             return RedirectToPage("./Index");
         }
 
-        private bool TreasureExists(int id)
+        private bool CategoryExists(int id)
         {
-            return _context.Treasures.Any(e => e.TreasureID == id);
+            return _context.Category.Any(e => e.CategoryID == id);
         }
     }
 }

@@ -1,5 +1,8 @@
-﻿namespace OnePiece.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace OnePiece.Models
 {
+    [Table("proposal")]
     public class Proposal
     {
         public int ProposalID { get; set; }

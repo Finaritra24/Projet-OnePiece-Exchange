@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using OnePiece.Models;
 
-namespace OnePiece.Pages_Treasures
+namespace OnePiece.Pages_Categories
 {
     public class CreateModel : PageModel
     {
@@ -20,13 +20,11 @@ namespace OnePiece.Pages_Treasures
 
         public IActionResult OnGet()
         {
-        ViewData["CategoryID"] = new SelectList(_context.Category, "CategoryID", "CategoryID");
-        ViewData["PirateID"] = new SelectList(_context.Pirates, "PirateID", "PirateID");
             return Page();
         }
 
         [BindProperty]
-        public Treasure Treasure { get; set; } = default!;
+        public Category Category { get; set; } = default!;
 
         // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
@@ -36,7 +34,7 @@ namespace OnePiece.Pages_Treasures
                 return Page();
             }
 
-            _context.Treasures.Add(Treasure);
+            _context.Category.Add(Category);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

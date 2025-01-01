@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace OnePiece.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250101131028_updatePirate")]
+    partial class updatePirate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,7 +38,7 @@ namespace OnePiece.Migrations
 
                     b.HasKey("CategoryID");
 
-                    b.ToTable("category");
+                    b.ToTable("Category");
                 });
 
             modelBuilder.Entity("OnePiece.Models.Pirate", b =>
@@ -65,7 +68,7 @@ namespace OnePiece.Migrations
 
                     b.HasIndex("TeamID");
 
-                    b.ToTable("pirate");
+                    b.ToTable("Pirates");
                 });
 
             modelBuilder.Entity("OnePiece.Models.Proposal", b =>
@@ -113,7 +116,7 @@ namespace OnePiece.Migrations
 
                     b.HasIndex("RequestingPirateID");
 
-                    b.ToTable("proposal");
+                    b.ToTable("Proposals");
                 });
 
             modelBuilder.Entity("OnePiece.Models.Team", b =>
@@ -130,7 +133,7 @@ namespace OnePiece.Migrations
 
                     b.HasKey("TeamID");
 
-                    b.ToTable("team");
+                    b.ToTable("Teams");
                 });
 
             modelBuilder.Entity("OnePiece.Models.Treasure", b =>
@@ -165,7 +168,7 @@ namespace OnePiece.Migrations
 
                     b.HasIndex("PirateID");
 
-                    b.ToTable("treasure");
+                    b.ToTable("Treasures");
                 });
 
             modelBuilder.Entity("OnePiece.Models.Pirate", b =>
