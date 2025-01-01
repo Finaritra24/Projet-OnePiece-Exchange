@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using OnePiece.Models;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 
 namespace OnePiece.Pages.Auth
 {
@@ -44,7 +45,7 @@ namespace OnePiece.Pages.Auth
                 ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                 return Page();
             }
-            HttpContext.Session.SetString("PirateID", pirate.PirateID.ToString());
+            HttpContext.Session.SetInt32("PirateID", pirate.PirateID);
             return RedirectToPage("/Index");
         }
     }

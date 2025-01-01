@@ -31,11 +31,6 @@ namespace OnePiece.Pages_Treasures
         // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
             _context.Treasures.Add(Treasure);
             await _context.SaveChangesAsync();
 

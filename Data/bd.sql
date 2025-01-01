@@ -20,6 +20,7 @@ CREATE TABLE Treasure (
     treasureID INT PRIMARY KEY IDENTITY(1,1),
     categoryID INT,
     denomination NVARCHAR(100),
+    password NVARCHAR(100),
     description NVARCHAR(255),
     price DECIMAL(18, 2),
     pirateID INT,
@@ -43,3 +44,4 @@ CREATE TABLE Proposal (
     FOREIGN KEY (requestingPirateID) REFERENCES Pirate(pirateID),
     FOREIGN KEY (proposedTreasureID) REFERENCES Treasure(treasureID)
 );
+

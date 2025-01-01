@@ -18,29 +18,34 @@ namespace OnePiece.Pages_Proposals
             _context = context;
         }
 
-        public IActionResult OnGet()
-        {
-        ViewData["ProposedTreasureID"] = new SelectList(_context.Treasures, "TreasureID", "TreasureID");
-        ViewData["ProposingPirateID"] = new SelectList(_context.Pirates, "PirateID", "PirateID");
-        ViewData["RequestingPirateID"] = new SelectList(_context.Pirates, "PirateID", "PirateID");
-            return Page();
-        }
+        public int TreasureID { get; set; }
+        public int PirateID { get; set; }
 
+        
         [BindProperty]
         public Proposal Proposal { get; set; } = default!;
 
-        // For more information, see https://aka.ms/RazorPagesCRUD.
+        public IActionResult OnGet()
+        {
+            return Page();
+        }
+
         public async Task<IActionResult> OnPostAsync()
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    return Page();
-            //}
 
+            Proposal.RequestingPirateID = 1;
+            Proposal.ProposingPirateID = 1;
+            Proposal.ProposedTreasureID = 1;
+            Proposal.DateProposal = DateTime.Now;
+            Proposal.DateReplyProposal = DateTime.Now;
+            Proposal.State = 0;
+            Proposal.Category = 0;
+            Proposal.CounterOfferAmount = 0;
             _context.Proposals.Add(Proposal);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
         }
+
     }
 }

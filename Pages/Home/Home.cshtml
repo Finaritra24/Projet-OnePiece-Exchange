@@ -1,4 +1,102 @@
 ﻿@page
 @model MyApp.Namespace.HomeModel
-@{
-}
+
+<h1> Nouveaux Trésors </h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.TopRecentTreasures[0].Denomination)</th>
+            <th>@Html.DisplayNameFor(model => model.TopRecentTreasures[0].Description)</th>
+            <th>@Html.DisplayNameFor(model => model.TopRecentTreasures[0].Price)</th>
+            <th>@Html.DisplayNameFor(model => model.TopRecentTreasures[0].Pirate)</th>
+            <th>@Html.DisplayNameFor(model => model.TopRecentTreasures[0].Category)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.TopRecentTreasures)
+        {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Denomination)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Pirate.PirateID)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Category.CategoryID)</td>
+                    <td> <a asp-page="/Proposals/Create" asp-route-TreasureID="@item.TreasureID" asp-route-PirateID="@item.Pirate.PirateID">Proposer</a></td>
+                </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <!-- Pagination simple avec flèches et numéros de pages -->
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" asp-page="./Home" asp-route-pageNumberTopRecent="@(Model.PageNumberTopRecent - 1)" aria-label="Page précédente">&lt;</a>
+                    </li>
+
+            <!-- Liens pour les numéros de page -->
+            @for (var i = 1; i <= Model.TotalPagesTopRecent; i++)
+            {
+                    <li class="page-item @(i == Model.PageNumberTopRecent ? "active" : "")">
+                        <a class="page-link" asp-page="./Home" asp-route-pageNumberTopRecent="@i">@i</a>
+                    </li>
+            }
+                    <li class="page-item">
+                        <a class="page-link" asp-page="./Home" asp-route-pageNumberTopRecent="@(Model.PageNumberTopRecent + 1)" aria-label="Page suivante">&gt;</a>
+                    </li>
+        </ul>
+    </nav>
+</div>
+
+<h2> Explorer </h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Treasure[0].Denomination)</th>
+            <th>@Html.DisplayNameFor(model => model.Treasure[0].Description)</th>
+            <th>@Html.DisplayNameFor(model => model.Treasure[0].Price)</th>
+            <th>@Html.DisplayNameFor(model => model.Treasure[0].Pirate)</th>
+            <th>@Html.DisplayNameFor(model => model.Treasure[0].Category)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Treasure)
+        {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Denomination)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Pirate.PirateID)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Category.CategoryID)</td>
+                        <td><a asp-page="/Proposals/Create" asp-route-TreasureID="@item.TreasureID" asp-route-PirateID="@item.Pirate.PirateID">Proposer</a></td> 
+                 </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <!-- Pagination simple avec flèches et numéros de pages -->
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" asp-page="./Home" asp-route-pageNumberTopRecent="@(Model.PageNumber - 1)" aria-label="Page précédente">&lt;</a>
+                    </li>
+
+            <!-- Liens pour les numéros de page -->
+            @for (var i = 1; i <= Model.TotalPages; i++)
+            {
+                    <li class="page-item @(i == Model.PageNumber ? "active" : "")">
+                        <a class="page-link" asp-page="./Home" asp-route-pageNumber="@i">@i</a>
+                    </li>
+            }
+                    <li class="page-item">
+                        <a class="page-link" asp-page="./Home" asp-route-pageNumber="@(Model.PageNumber+ 1)" aria-label="Page suivante">&gt;</a>
+                    </li>
+        </ul>
+    </nav>
+</div>

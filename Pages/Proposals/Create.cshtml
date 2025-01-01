@@ -14,46 +14,9 @@
     <form method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Proposal.ProposedTreasureID" class="control-label"></label>
-                <select asp-for="Proposal.ProposedTreasureID" class ="form-control" asp-items="ViewBag.ProposedTreasureID"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Proposal.ProposingPirateID" class="control-label"></label>
-                <select asp-for="Proposal.ProposingPirateID" class ="form-control" asp-items="ViewBag.ProposingPirateID"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Proposal.RequestingPirateID" class="control-label"></label>
-                <select asp-for="Proposal.RequestingPirateID" class ="form-control" asp-items="ViewBag.RequestingPirateID"></select>
-            </div>
-            <div class="form-group">
                 <label asp-for="Proposal.ProposedOfferAmount" class="control-label"></label>
                 <input asp-for="Proposal.ProposedOfferAmount" class="form-control" />
                 <span asp-validation-for="Proposal.ProposedOfferAmount" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Proposal.CounterOfferAmount" class="control-label"></label>
-                <input asp-for="Proposal.CounterOfferAmount" class="form-control" />
-                <span asp-validation-for="Proposal.CounterOfferAmount" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Proposal.Category" class="control-label"></label>
-                <input asp-for="Proposal.Category" class="form-control" />
-                <span asp-validation-for="Proposal.Category" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Proposal.State" class="control-label"></label>
-                <input asp-for="Proposal.State" class="form-control" />
-                <span asp-validation-for="Proposal.State" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Proposal.DateProposal" class="control-label"></label>
-                <input asp-for="Proposal.DateProposal" class="form-control" />
-                <span asp-validation-for="Proposal.DateProposal" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Proposal.DateReplyProposal" class="control-label"></label>
-                <input asp-for="Proposal.DateReplyProposal" class="form-control" />
-                <span asp-validation-for="Proposal.DateReplyProposal" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
