@@ -49,7 +49,7 @@ namespace OnePiece.Pages_Proposals
             Proposal.ProposedTreasureID = TreasureID;
             Proposal.DateProposal = DateTime.Now;
             Proposal.DateReplyProposal = DateTime.Now;
-            Proposal.State = 0;
+            Proposal.State = 1;
             Proposal.Category = 0;
             Proposal.CounterOfferAmount = 0;
             _context.Proposals.Add(Proposal);

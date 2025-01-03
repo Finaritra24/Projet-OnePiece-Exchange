@@ -17,19 +17,10 @@
                 @Html.DisplayNameFor(model => model.Proposal[0].Category)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Proposal[0].State)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Proposal[0].DateProposal)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Proposal[0].DateReplyProposal)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Proposal[0].ProposedTreasure)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Proposal[0].ProposingPirate)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Proposal[0].RequestingPirate)
@@ -51,27 +42,18 @@
                     @Html.DisplayFor(modelItem => item.Category)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.State)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.DateProposal)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.DateReplyProposal)
+                    @Html.DisplayFor(modelItem => item.ProposedTreasure.Denomination)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ProposedTreasure.TreasureID)
+                    @Html.DisplayFor(modelItem => item.RequestingPirate.Denomination)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ProposingPirate.PirateID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.RequestingPirate.PirateID)
-                </td>
-                <td>
-                    <button asp-page="./Edit" asp-route-id="@item.ProposalID">Accept</button> |
+                        <a asp-page-handler="Accept" asp-route-proposalID="@item.ProposalID" >Accepter</a> |
                     <a asp-page="./Details" asp-route-id="@item.ProposalID">Propose</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.ProposalID">Refuse</a>
+                    <a asp-page-handler="Refuse" asp-route-proposalID="@item.ProposalID" >Refuser</a>
                 </td>
             </tr>
         }

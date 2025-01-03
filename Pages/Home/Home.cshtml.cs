@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using OnePiece.Models;
 
-namespace MyApp.Namespace;
+namespace OnePiece.Pages.Home;
 
 public class HomeModel : PageModel
 {
@@ -15,7 +15,7 @@ public class HomeModel : PageModel
 
     public int PageNumber { get; set; } = 1;
     public int PageSize { get; set; } = 5;
-    public int TotalPages { get; set; } 
+    public int TotalPages { get; set; }
 
     public int PageNumberTopRecent { get; set; } = 1;
     public int PageSizeTopRecent { get; set; } = 5;
@@ -37,15 +37,15 @@ public class HomeModel : PageModel
         Treasure = await _context.Treasures
             .Include(t => t.Category)
             .Include(t => t.Pirate)
-            .Skip((pageNumber - 1) * PageSize)  
-            .Take(PageSize) 
+            .Skip((pageNumber - 1) * PageSize)
+            .Take(PageSize)
             .ToListAsync();
 
         // Calculer les pages pour TopRecentTreasures
         PageSizeTopRecent = 5;
         PageNumberTopRecent = pageNumberTopRecent;
         var totalItemsTopRecent = await _context.Treasures.CountAsync();
-        TotalPagesTopRecent = (int)Math.Ceiling(totalItemsTopRecent / (double)PageSizeTopRecent); 
+        TotalPagesTopRecent = (int)Math.Ceiling(totalItemsTopRecent / (double)PageSizeTopRecent);
 
         TopRecentTreasures = await _context.Treasures
             .FromSqlRaw("SELECT TOP 5 * FROM Treasure ORDER BY dateCreation DESC")

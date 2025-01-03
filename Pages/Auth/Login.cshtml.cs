@@ -4,6 +4,7 @@ using OnePiece.Models;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
+using System.ComponentModel.DataAnnotations;
 
 namespace OnePiece.Pages.Auth
 {
@@ -21,8 +22,11 @@ namespace OnePiece.Pages.Auth
 
         public class LoginInput
         {
-            public string Denomination { get; set; }
-            public string Password { get; set; }
+            [Required]
+            public string Denomination { get; set; } = "";
+
+            [Required]
+            public string Password { get; set; } = "";
         }
 
         public void OnGet()
