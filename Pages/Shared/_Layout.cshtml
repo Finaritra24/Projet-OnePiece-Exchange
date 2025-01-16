@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - OnePiece</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/site.css" />
     <link rel="stylesheet" href="~/OnePiece.styles.css" asp-append-version="true" />
 </head>
 <body>
@@ -21,21 +21,17 @@
                 <div class="container">
                     <!-- Menu pour les utilisateurs connectés -->
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item"><a class="nav-link" href="/Home/Index">Accueil</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/Account/Logout">Déconnexion</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Home/home">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Proposals/request">Requête</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Proposals">Historique</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Auth/Login">Déconnexion</a></li>
                     </ul>
-                </div>
-            </nav>
-        }
-        else
-        {
-            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-                <div class="container">
-                    <!-- Menu pour les utilisateurs non connectés -->
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item"><a class="nav-link" href="/Account/Login">Se connecter</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/Account/Register">S'inscrire</a></li>
-                    </ul>
+                    <li class="nav-item" style="display: flex; gap:10px; align-items:center;">
+                        <span class="nav-link">
+                                Budget : @HttpContextAccessor.HttpContext?.Session?.GetString("Budget")฿
+                        </span>
+                        <a class="link-butt" href="/Pirates/Edit">Ajouter</a>
+                    </li>
                 </div>
             </nav>
         }
@@ -47,7 +43,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="footer text-muted">
         <div class="container">
             &copy; 2024 - OnePiece - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>

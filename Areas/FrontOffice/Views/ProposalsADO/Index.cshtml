@@ -1,0 +1,109 @@
+﻿@model IEnumerable<OnePiece.Models.Proposal>
+@{
+    ViewData["Title"] = "Liste des Proposals";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Proposals - FrontOffice</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+     <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+
+<body>
+
+<div class="front" style="padding: 6rem;">
+    
+    <h2>Interactions</h2>
+
+    <!-- Formulaire de recherche -->
+    <form method="get" asp-action="Index" asp-controller="Proposals">
+        <input type="text" name="searchTerm" value="@ViewData["SearchTerm"]" placeholder="Chercher un proposal..." />
+        <button type="submit" class="link-butt">Rechercher</button>
+    </form>
+
+    <br/>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Trésor
+                </th>
+                <th>
+                    Proposition
+                </th>
+                <th>
+                   Contre-Offre
+                </th>
+                <th>
+                   Création
+                </th>
+                <th>
+                    Réponse
+                </th>
+                <th>
+                    Titulaire
+                </th>
+                <th>
+                    Acheteur
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model){
+            <tr>
+                <td>
+                    @item.ProposedTreasure.Denomination
+                </td>
+                <td>
+                    @item.ProposedOfferAmount฿
+                </td>
+                <td>
+                    @item.CounterOfferAmount฿
+                </td>
+                <td>
+                    @(string.Format("{0:yyyy-MM-dd}", item.DateProposal))
+                </td>
+                <td>
+                    @(string.Format("{0:yyyy-MM-dd}", item.DateReplyProposal))
+                </td>
+
+                <td>
+                    @item.ProposingPirate.Denomination
+                </td>
+                <td>
+                    @item.RequestingPirate.Denomination
+                </td>
+                <td>
+                    @switch (item.State)
+                    {
+                        case 1:
+                            <span class="state-pending">En Attente</span>
+                            break;
+                        case 2:
+                            <span class="state-validated">Validé</span>
+                            break;
+                        case 3:
+                            <span class="state-paid">Payé</span>
+                            break;
+                        case 0:
+                            <span class="state-paid">Refusé</span>
+                            break;
+                    }
+                </td>
+                @* <td> *@
+                @*     <a asp-page="./Edit" asp-route-id="@item.ProposalID">Edit</a> | *@
+                @*     <a asp-page="./Details" asp-route-id="@item.ProposalID">Details</a> | *@
+                @*     <a asp-page="./Delete" asp-route-id="@item.ProposalID">Delete</a> *@
+                @* </td> *@
+            </tr>
+    }
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

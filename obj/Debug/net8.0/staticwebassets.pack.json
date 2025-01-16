@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "E:\\matiere\\m2\\Dotnet Core\\git\\onepiece\\wwwroot\\images\\jpg.jpg",
+      "PackagePath": "staticwebassets\\images\\jpg.jpg"
+    },
+    {
+      "Id": "E:\\matiere\\m2\\Dotnet Core\\git\\onepiece\\wwwroot\\images\\login.jpg",
+      "PackagePath": "staticwebassets\\images\\login.jpg"
+    },
+    {
       "Id": "E:\\matiere\\m2\\Dotnet Core\\git\\onepiece\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

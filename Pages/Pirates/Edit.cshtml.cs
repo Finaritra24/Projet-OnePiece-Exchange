@@ -22,12 +22,9 @@ namespace OnePiece.Pages_Pirates
         [BindProperty]
         public Pirate Pirate { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync()
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            int id = HttpContext.Session.GetInt32("PirateID") ?? 0;
 
             var pirate =  await _context.Pirates.FirstOrDefaultAsync(m => m.PirateID == id);
             if (pirate == null)
@@ -43,30 +40,25 @@ namespace OnePiece.Pages_Pirates
         // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
+
+            // Récupérer le pirate correspondant à l'ID
+            var pirate = await _context.Pirates
+                .FirstOrDefaultAsync(p => p.PirateID == Pirate.PirateID);
+
+            if (pirate == null)
             {
-                return Page();
+                return NotFound(); // Si aucun pirate n'est trouvé
             }
 
-            _context.Attach(Pirate).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!PirateExists(Pirate.PirateID))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return RedirectToPage("./Index");
+            // Mettre à jour le budget en ajoutant la différence
+            pirate.Budget += Pirate.Budget;
+            Console.WriteLine($"Budget envoyé depuis le formulaire : {pirate.Budget} et {Pirate.Budget}");
+        
+            // Mettre à jour les autres propriétés si nécessaire
+            _context.Pirates.Update(pirate);
+            await _context.SaveChangesAsync();
+            HttpContext.Session.SetString("Budget", pirate.Budget.ToString());
+            return RedirectToPage("/Home/home");
         }
 
         private bool PirateExists(int id)

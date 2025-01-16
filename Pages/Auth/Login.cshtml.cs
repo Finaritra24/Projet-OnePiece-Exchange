@@ -18,7 +18,7 @@ namespace OnePiece.Pages.Auth
         }
 
         [BindProperty]
-        public LoginInput Input { get; set; }
+        public required LoginInput Input { get; set; }
 
         public class LoginInput
         {
@@ -50,7 +50,8 @@ namespace OnePiece.Pages.Auth
                 return Page();
             }
             HttpContext.Session.SetInt32("PirateID", pirate.PirateID);
-            return RedirectToPage("/Index");
+            HttpContext.Session.SetString("Budget", pirate.Budget.ToString());
+            return RedirectToPage("/Home/home");
         }
     }
 }

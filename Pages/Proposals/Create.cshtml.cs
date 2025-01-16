@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using OnePiece.Models;
 
 namespace OnePiece.Pages_Proposals
@@ -27,7 +28,6 @@ namespace OnePiece.Pages_Proposals
         [BindProperty]
         public int RequestingPirateID { get; set; }
 
-
         [BindProperty]
         public Proposal Proposal { get; set; } = default!;
 
@@ -44,6 +44,13 @@ namespace OnePiece.Pages_Proposals
         public async Task<IActionResult> OnPostAsync()
         {
             RequestingPirateID = HttpContext.Session.GetInt32("PirateID") ?? 0;
+            var pirate = await _context.Pirates.FirstOrDefaultAsync(m => m.PirateID == RequestingPirateID);
+            if (pirate?.Budget < Proposal.ProposedOfferAmount)
+            {
+                ModelState.AddModelError(string.Empty, "Budget Insuffisant");
+                return Page();
+            }
+
             Proposal.RequestingPirateID = RequestingPirateID;
             Proposal.ProposingPirateID = PirateID;
             Proposal.ProposedTreasureID = TreasureID;

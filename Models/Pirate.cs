@@ -11,6 +11,7 @@ namespace OnePiece.Models
         public string Password { get; set; }
         public int TeamID { get; set; }
         public string Status { get; set; }
+        public decimal Budget { get; set; }
 
         public Team Team { get; set; }
     }

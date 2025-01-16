@@ -18,5 +18,206 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-image: url('/images/jpg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: white;
+}
+
+.navbar {
+    z-index: 99;
+}
+
+div.bg {
+}
+
+div.nav-item{
+    display: flex;
+    gap: 10px;
+}
+
+div.login {
+    background: black;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+    div.login div.content {
+        background-image: url('/images/login.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 30rem;
+        padding: 2rem;
+        color: white;
+        border-radius: 10px;
+    }
+        h2{
+            font-weight: 700;
+            font-size: 26px;
+            text-align: center;
+            text-shadow: 1px 1px 2px red, 0 0 1em orange, 0 0 0.2em blue;
+        }
+        div.bg h2{
+            font-size: 64px;
+        }
+
+    div.form-group {
+        margin-bottom: 1rem;
+        width: 15rem;
+    }
+
+.btn-orange {
+    background-color: #39230f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: auto;
+    display: block;
+    text-align: center;
+}
+
+    .btn-orange:hover {
+        background-color: #b36666; 
+    }
+
+div.caroussel {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    justify-items: center;
+}
+
+div.treasure-details {
+    background-color: #1a0f1deb;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: rgba(0,0,0,0,4) 10px 10px inset;
+}
+
+div.treasure-details img{
+    width: 14rem;
+}
+
+div.title-object {
+    font-weight: 600;
+    font-size: 21px;
+}
+
+div.description{
+    margin-top:0.5rem;
+    height: 5rem;
+}
+
+div.subtitle{
+    margin-top: 0.1rem;
+    font-size: 13px;
+    color: lightgray;
+}
+
+div.price{
+    margin-left: auto;
+    font-weight: 700;
+    width: max-content;
+}
+
+.link-butt{
+    text-decoration: none;
+    padding: 4px 7px 7px 7px;
+    background: orange;
+    border-radius: 25px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    height: max-content;
+    cursor: pointer;
+}
+
+.link-butt.violet{
+    background: violet!important;
+}
+
+    .link-butt.red {
+        background: red!important;
+    }
+
+.link-butt:hover{
+    background:coral;
+}
+
+.pagination {
+    padding: 10px;
+    border-radius: 5px
+}
+
+    .pagination .page-link {
+        color: white;
+        background-color: transparent;
+        border: 1px solid white; 
+        margin: 0 5px;
+    }
+
+        .pagination .page-link:hover {
+            background-color: orange; 
+            color: black;
+            border-color: orange;
+        }
+
+    .pagination .active .page-link {
+        background-color: orange;
+        color: black;
+        border-color: orange;
+    }
+
+div.form-popup {
+    width: 25rem;
+    background-color: #1a0f1deb;
+    padding: 4rem;
+    margin: auto;
+    margin-top: 6rem;
+}
+
+div.form-link{
+    display: flex;
+    align-items: center;
+}
+
+    div.form-link div.butt-orange{
+        margin-right: auto;
+    }
+
+table {
+    background: #ffffffe8;
+    padding: 1rem;
+}
+
+.state-pending {
+    color: orange;
+    font-weight: bold;
+}
+
+.state-validated {
+    color: green;
+    font-weight: bold;
+}
+
+.state-paid {
+    color: black;
+    font-weight: bold;
+}
+
+div.front{
+    padding: 6rem;
 }

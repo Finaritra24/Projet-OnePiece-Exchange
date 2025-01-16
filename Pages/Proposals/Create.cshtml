@@ -5,27 +5,29 @@
         ViewData["Title"] = "Create";
         }
         
-        <h1>Create</h1>
+    <div class="form-popup">
+       
         
-    <h4>Proposal</h4>
-    <hr />
-    <div class="row">
-    <div class="col-md-4">
-    <form method="post">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Proposal.ProposedOfferAmount" class="control-label"></label>
-                <input asp-for="Proposal.ProposedOfferAmount" class="form-control" />
-                <span asp-validation-for="Proposal.ProposedOfferAmount" class="text-danger"></span>
+        <h4>Proposition</h4>
+        <hr />
+        
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-md-4">
+                <form method="post">
+                    <div class="form-group">
+                        <input asp-for="Proposal.ProposedOfferAmount" class="form-control" placeholder="Montant à proposé" />
+                        <span asp-validation-for="Proposal.ProposedOfferAmount" class="text-danger"></span>
+                    </div>
+                    <br/>
+                    <div class="form-link">
+                        <a asp-page="Index" class="link-butt">Retour</a>
+                       <div class="form-group">
+                            <input type="submit" value="Create" class="btn-orange" />
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
-</div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
 

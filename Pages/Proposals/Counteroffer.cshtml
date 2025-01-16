@@ -2,3 +2,26 @@
 @model MyApp.Namespace.CounterofferModel
 @{
 }
+    <h1>Contre Offre</h1>
+        
+    <hr />
+    <div class="row">
+    <div class="col-md-4">
+    <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Countofferprice" class="control-label"></label>
+                <input asp-for="Countofferprice" class="form-control" />
+                <span asp-validation-for="Countofferprice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Valider" class="btn btn-primary" />
+            </div>
+    </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+

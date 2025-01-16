@@ -26,6 +26,8 @@ namespace OnePiece.Pages_Proposals
                 .Include(p => p.ProposedTreasure)
                 .Include(p => p.ProposingPirate)
                 .Include(p => p.RequestingPirate).ToListAsync();
+
+            Proposal = Proposal.OrderByDescending(p => p.DateReplyProposal).ToList();
         }
     }
 }

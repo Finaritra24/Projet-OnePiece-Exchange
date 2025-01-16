@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Us4Sn4MblJ9uNojSC2TLl8qa3tOFqTgRaEX3mUe5jdc=",
+  "Hash": "WT8ZvbxhWeGEA0RGvYqKKUkY1IXN63LLnJuavm0qXWQ=",
   "Source": "OnePiece",
   "BasePath": "_content/OnePiece",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "c2tiyv64ts",
-      "Integrity": "pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=",
+      "Fingerprint": "0w1p95zmoy",
+      "Integrity": "0GJ2+6He7gFuGkEytSlLNwZXp5YxXwH1ApcKwZHBB5s=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -99,6 +99,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "E:\\matiere\\m2\\Dotnet Core\\git\\onepiece\\wwwroot\\images\\jpg.jpg",
+      "SourceId": "OnePiece",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\matiere\\m2\\Dotnet Core\\git\\onepiece\\wwwroot\\",
+      "BasePath": "_content/OnePiece",
+      "RelativePath": "images/jpg#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "7gfztj0lrk",
+      "Integrity": "CR6/U8vbn4Cd/eEag41QstP/uMLFSUn7JxT3bUNEDWg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\jpg.jpg"
+    },
+    {
+      "Identity": "E:\\matiere\\m2\\Dotnet Core\\git\\onepiece\\wwwroot\\images\\login.jpg",
+      "SourceId": "OnePiece",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\matiere\\m2\\Dotnet Core\\git\\onepiece\\wwwroot\\",
+      "BasePath": "_content/OnePiece",
+      "RelativePath": "images/login#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "m6dzkyz36p",
+      "Integrity": "goYYUuMyZondxsDkdQeTgFqevvyOWvJonDGNF45mi4Q=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\login.jpg"
     },
     {
       "Identity": "E:\\matiere\\m2\\Dotnet Core\\git\\onepiece\\wwwroot\\js\\site.js",
@@ -1321,7 +1363,7 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.c2tiyv64ts.css",
+      "Route": "css/site.0w1p95zmoy.css",
       "AssetFile": "E:\\matiere\\m2\\Dotnet Core\\git\\onepiece\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1331,7 +1373,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "362"
+          "Value": "3982"
         },
         {
           "Name": "Content-Type",
@@ -1339,11 +1381,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
+          "Value": "\"0GJ2+6He7gFuGkEytSlLNwZXp5YxXwH1ApcKwZHBB5s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 09:13:07 GMT"
+          "Value": "Sat, 11 Jan 2025 05:39:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1353,7 +1395,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "c2tiyv64ts"
+          "Value": "0w1p95zmoy"
         },
         {
           "Name": "label",
@@ -1361,7 +1403,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
+          "Value": "sha256-0GJ2+6He7gFuGkEytSlLNwZXp5YxXwH1ApcKwZHBB5s="
         }
       ]
     },
@@ -1376,7 +1418,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "362"
+          "Value": "3982"
         },
         {
           "Name": "Content-Type",
@@ -1384,11 +1426,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
+          "Value": "\"0GJ2+6He7gFuGkEytSlLNwZXp5YxXwH1ApcKwZHBB5s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 09:13:07 GMT"
+          "Value": "Sat, 11 Jan 2025 05:39:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1398,7 +1440,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
+          "Value": "sha256-0GJ2+6He7gFuGkEytSlLNwZXp5YxXwH1ApcKwZHBB5s="
         }
       ]
     },
@@ -1481,6 +1523,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "images/jpg.7gfztj0lrk.jpg",
+      "AssetFile": "E:\\matiere\\m2\\Dotnet Core\\git\\onepiece\\wwwroot\\images\\jpg.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "386130"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CR6/U8vbn4Cd/eEag41QstP/uMLFSUn7JxT3bUNEDWg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 10 Jan 2025 21:20:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7gfztj0lrk"
+        },
+        {
+          "Name": "label",
+          "Value": "images/jpg.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-CR6/U8vbn4Cd/eEag41QstP/uMLFSUn7JxT3bUNEDWg="
+        }
+      ]
+    },
+    {
+      "Route": "images/jpg.jpg",
+      "AssetFile": "E:\\matiere\\m2\\Dotnet Core\\git\\onepiece\\wwwroot\\images\\jpg.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "386130"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CR6/U8vbn4Cd/eEag41QstP/uMLFSUn7JxT3bUNEDWg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 10 Jan 2025 21:20:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-CR6/U8vbn4Cd/eEag41QstP/uMLFSUn7JxT3bUNEDWg="
+        }
+      ]
+    },
+    {
+      "Route": "images/login.jpg",
+      "AssetFile": "E:\\matiere\\m2\\Dotnet Core\\git\\onepiece\\wwwroot\\images\\login.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "190075"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"goYYUuMyZondxsDkdQeTgFqevvyOWvJonDGNF45mi4Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 10 Jan 2025 20:18:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-goYYUuMyZondxsDkdQeTgFqevvyOWvJonDGNF45mi4Q="
+        }
+      ]
+    },
+    {
+      "Route": "images/login.m6dzkyz36p.jpg",
+      "AssetFile": "E:\\matiere\\m2\\Dotnet Core\\git\\onepiece\\wwwroot\\images\\login.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "190075"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"goYYUuMyZondxsDkdQeTgFqevvyOWvJonDGNF45mi4Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 10 Jan 2025 20:18:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "m6dzkyz36p"
+        },
+        {
+          "Name": "label",
+          "Value": "images/login.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-goYYUuMyZondxsDkdQeTgFqevvyOWvJonDGNF45mi4Q="
         }
       ]
     },
@@ -6263,7 +6469,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 09:13:07 GMT"
+          "Value": "Sat, 11 Jan 2025 05:20:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6308,7 +6514,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 09:13:07 GMT"
+          "Value": "Sat, 11 Jan 2025 05:20:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6353,7 +6559,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 09:13:07 GMT"
+          "Value": "Sat, 11 Jan 2025 05:20:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6390,7 +6596,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 09:13:07 GMT"
+          "Value": "Sat, 11 Jan 2025 05:20:40 GMT"
         },
         {
           "Name": "Cache-Control",

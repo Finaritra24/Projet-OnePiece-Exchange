@@ -11,6 +11,7 @@ namespace OnePiece.Models
         public string Description { get; set; }
         public decimal Price { get; set; }
         public int PirateID { get; set; }
+        public int State { get; set; }
 
         public Pirate Pirate { get; set; }
         public Category Category { get; set; }

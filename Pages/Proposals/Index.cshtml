@@ -1,4 +1,4 @@
-@page
+﻿@page
 @model OnePiece.Pages_Proposals.IndexModel
 
 @{
@@ -10,31 +10,25 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Proposal[0].ProposedOfferAmount)
+                Trésor
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Proposal[0].CounterOfferAmount)
+                Proposition
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Proposal[0].Category)
+               Contre-Offre
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Proposal[0].State)
+               Création
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Proposal[0].DateProposal)
+                Réponse
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Proposal[0].DateReplyProposal)
+                Titulaire
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Proposal[0].ProposedTreasure)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Proposal[0].ProposingPirate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Proposal[0].RequestingPirate)
+                Acheteur
             </th>
             <th></th>
         </tr>
@@ -43,37 +37,49 @@
 @foreach (var item in Model.Proposal) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.ProposedOfferAmount)
+                @Html.DisplayFor(modelItem => item.ProposedTreasure.Denomination)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CounterOfferAmount)
+                    @Html.DisplayFor(modelItem => item.ProposedOfferAmount)฿
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Category)
+                @Html.DisplayFor(modelItem => item.CounterOfferAmount)฿
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.State)
+                @(string.Format("{0:yyyy-MM-dd}", item.DateProposal))
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DateProposal)
+                @(string.Format("{0:yyyy-MM-dd}", item.DateReplyProposal))
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.ProposingPirate.Denomination)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DateReplyProposal)
+                @Html.DisplayFor(modelItem => item.RequestingPirate.Denomination)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ProposedTreasure.TreasureID)
+                @switch (item.State)
+                {
+                    case 1:
+                        <span class="state-pending">En Attente</span>
+                        break;
+                    case 2:
+                        <span class="state-validated">Validé</span>
+                        break;
+                    case 3:
+                        <span class="state-paid">Payé</span>
+                        break;
+                    case 0:
+                        <span class="state-paid">Refusé</span>
+                        break;
+                }
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProposingPirate.PirateID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RequestingPirate.PirateID)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ProposalID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ProposalID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ProposalID">Delete</a>
-            </td>
+            @* <td> *@
+            @*     <a asp-page="./Edit" asp-route-id="@item.ProposalID">Edit</a> | *@
+            @*     <a asp-page="./Details" asp-route-id="@item.ProposalID">Details</a> | *@
+            @*     <a asp-page="./Delete" asp-route-id="@item.ProposalID">Delete</a> *@
+            @* </td> *@
         </tr>
 }
     </tbody>

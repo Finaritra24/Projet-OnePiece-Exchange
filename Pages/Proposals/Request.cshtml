@@ -3,27 +3,41 @@
 @{
 }
 
-<h1>Historique</h1>
+<h1>Requete</h1>
+<div class="text-danger">
+    <div asp-validation-summary="ModelOnly"></div>
+</div>
+
+<form method="post">
+    <div style="display: flex; gap:0.5rem; align-items:center; margin-bottom:1rem;">
+        <div class="form-group">
+            <input class="form-control" style="margin-bottom:-1rem!important;" placeholder="Recherche" />
+            <span class="text-danger" ></span>
+        </div>
+        <a type="submit" class="link-butt">Rechercher</a>
+    </div>
+</form>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Proposal[0].ProposedOfferAmount)
+                Trésor
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Proposal[0].CounterOfferAmount)
+                Proposeur
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Proposal[0].Category)
+                Proposition
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Proposal[0].DateProposal)
+                Contre-Offre
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Proposal[0].ProposedTreasure)
+                Date
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Proposal[0].RequestingPirate)
+                Catégorie
             </th>
             <th></th>
         </tr>
@@ -33,27 +47,47 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ProposedOfferAmount)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CounterOfferAmount)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Category)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DateProposal)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.ProposedTreasure.Denomination)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.RequestingPirate.Denomination)
                 </td>
                 <td>
-                        <a asp-page-handler="Accept" asp-route-proposalID="@item.ProposalID" >Accepter</a> |
-                    <a asp-page="./Details" asp-route-id="@item.ProposalID">Propose</a> |
-                    <a asp-page-handler="Refuse" asp-route-proposalID="@item.ProposalID" >Refuser</a>
+                    @Html.DisplayFor(modelItem => item.ProposedOfferAmount)฿
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CounterOfferAmount)฿
+                </td>
+                <td>
+                    @(string.Format("{0:yyyy-MM-dd}", item.DateProposal))
+                </td>
+                <td>
+                    @switch (item.Category)
+                    {
+                        case 0:
+                            <span class="state-pending">Proposition</span>
+                            break;
+                        case 1:
+                            <span class="state-validated">Contre-Offre</span>
+                            break;
+                    }
+                </td>
+                <td>
+                    @if (item.State !=2)
+                    { 
+                        <a class="link-butt" asp-page-handler="Accept" asp-route-proposalID="@item.ProposalID" >Accepter</a> 
+                        @if (item.Category == 0)
+                        {
+                            <a class="link-butt violet" style="background: violet" asp-page="./Counteroffer" asp-route-proposalID="@item.ProposalID">Proposer</a>
+                        }
+                        <a class="link-butt red" style="background: red" asp-page-handler="Refuse" asp-route-proposalID="@item.ProposalID" >Refuser</a>
+                    }
+                    @if (item.State == 2)
+                    {
+                        <a class="link-butt" asp-page-handler="Paiement" asp-route-proposalID="@item.ProposalID" >Payer</a>
+                        <a class="link-butt red" style="background: red" asp-page-handler="Refuse" asp-route-proposalID="@item.ProposalID" >Annuler</a>
+                    }
+
                 </td>
             </tr>
         }

@@ -3,18 +3,22 @@
 @{
     ViewData["Title"] = "Login";
 }
-<h2>Connexion</h2>
 
-<form method="post">
-    <div class="form-group">
-        <label asp-for="Input.Denomination"></label>
-        <input asp-for="Input.Denomination" class="form-control" />
-        <span asp-validation-for="Input.Denomination" class="text-danger"></span>
+
+<div class="login">
+    <div class="content">
+    <h2>Connectez-vous pour Découvrir de Nouveaux Horizons !</h2>
+    <br/>
+    <form method="post">
+            <div class="form-group">
+                <input asp-for="Input.Denomination" class="form-control" placeholder="Denomination" />
+                <span asp-validation-for="Input.Denomination" class="text-danger" ></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Input.Password" type="password" class="form-control" placeholder="Mot de Passe"  />
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn-orange">Se Connecter</button>
+    </form>
     </div>
-    <div class="form-group">
-        <label asp-for="Input.Password"></label>
-        <input asp-for="Input.Password" type="password" class="form-control" />
-        <span asp-validation-for="Input.Password" class="text-danger"></span>
-    </div>
-    <button type="submit" class="btn btn-primary">Login</button>
-</form>
+</div>
